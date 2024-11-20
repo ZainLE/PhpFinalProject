@@ -23,3 +23,10 @@ This project is a Laravel-based web application that allows users to find local 
 
 ---
 
+# Models
+
+- **User**: Represents users of the system.  
+- **Service**: Represents services offered.  
+- **ServiceProvider**: Represents individuals or businesses offering services.  
+- **Booking**: Manages service bookings.  
+- **Review**: Stores user feedback for services.  

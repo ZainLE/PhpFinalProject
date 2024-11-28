@@ -13,7 +13,6 @@ Route::get('/service-component', function () {
     $categories = Service::select('category')
         ->distinct()
         ->pluck('category');
-
     $services = Service::with('user')
         ->where('is_active', true)
         ->latest()

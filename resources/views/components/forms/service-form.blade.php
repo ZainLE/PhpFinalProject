@@ -96,4 +96,4 @@
             <label for="is_active" class="ml-2 block text-sm text-gray-700">Service is active</label>
         </div>
     @endif
-</div> 
+</div>

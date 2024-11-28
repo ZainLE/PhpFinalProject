@@ -1,2 +1,3 @@
-<x-sitelayout />
- 
+
+    <x-service-component />
+

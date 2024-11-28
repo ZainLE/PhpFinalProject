@@ -8,7 +8,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased bg-gray-50">
+    <!-- <body class="antialiased bg-gray-50">
         <!-- Hero Section with Search -->
         <div class="relative bg-indigo-600 h-[500px]">
             <!-- Navigation -->

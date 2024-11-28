@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 
 class Booking extends Model
 {
@@ -14,13 +15,13 @@ class Booking extends Model
     protected $fillable = [
         'user_id',
         'service_id',
-        'date',
-        'duration',
+        'booking_date',
+        'status',
+        'notes'
     ];
 
     protected $casts = [
-        'date' => 'datetime',
-        'duration' => 'integer',
+        'booking_date' => 'datetime'
     ];
 
     public function user(): BelongsTo

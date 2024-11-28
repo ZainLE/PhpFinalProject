@@ -11,10 +11,11 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = [
-        'rating',
-        'review_text',
+        'booking_id',
         'user_id',
-        'booking_id'
+        'service_id',
+        'rating',
+        'comment'
     ];
 
     protected $casts = [

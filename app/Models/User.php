@@ -68,9 +68,9 @@ class User extends Authenticatable
         return $this->hasMany(Booking::class);
     }
 
-    public function serviceProvider(): HasOne
-    {
-        return $this->hasOne(ServiceProvider::class);
-    }
+    // public function serviceProvider(): HasOne
+    // {
+    //     return $this->hasOne(ServiceProvider::class);
+    // }
 
 }

@@ -8,13 +8,11 @@ use App\Models\Service;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ReviewController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-Route::get('/service-component', function () {
-    $categories = Service::select('category')
-        ->distinct()
-        ->pluck('category');
+Route::get('/', [ServiceController::class, 'index'])->name('home');
+// Route::get('/service-component', function () {
+//     $categories = Service::select('category')
+//         ->distinct()
+//         ->pluck('category');
 
     $services = Service::with('user')
         ->where('is_active', true)

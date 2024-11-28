@@ -19,8 +19,8 @@
 
                     <div class="hidden md:flex space-x-8">
                         <a href="{{ route('services.index') }}" class="text-white hover:text-indigo-200">Find Services</a>
-                        <!-- <a href="{{ route('services.create') }}" class="text-white hover:text-indigo-200">Become a Provider</a>
-                        <a href="#" class="text-white hover:text-indigo-200">How it Works</a> -->
+                        <a href="{{ route('services.create') }}" class="text-white hover:text-indigo-200">Become a Provider</a>
+                        <a href="#" class="text-white hover:text-indigo-200">How it Works</a>
 
                         @auth
                             <div class="relative" x-data="{ open: false }">

@@ -48,36 +48,7 @@ class ServiceController extends Controller
         ));
     }
 
-    // /**
-    //  * Show the form for creating a new service.
-    //  */
-    // public function create(): View
-    // {
-    //     return view('services.create');
-    // }
 
-    /**
-     * Store a newly created service.
-     */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'category' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'location' => 'required|string|max:255',
-        ]);
-
-        $service = $request->user()->services()->create($validated);
-
-        return redirect()->route('services.show', $service)
-            ->with('success', 'Service created successfully!');
-    }
-
-    /**
-     * Display the specified service.
-     */
     public function show(Service $service): View
     {
         $service->load('user');
@@ -110,54 +81,7 @@ class ServiceController extends Controller
         return $slots;
     }
 
-    /**
-     * Show the form for editing the specified service.
-     */
-    // public function edit(Service $service): View
-    // {
-    //     $this->authorize('update', $service);
 
-    //     return view('services.edit', compact('service'));
-    // }
-
-    /**
-     * Update the specified service.
-     */
-    public function update(Request $request, Service $service)
-    {
-        $this->authorize('update', $service);
-
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'category' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'location' => 'required|string|max:255',
-            'is_active' => 'boolean',
-        ]);
-
-        $service->update($validated);
-
-        return redirect()->route('services.show', $service)
-            ->with('success', 'Service updated successfully!');
-    }
-
-    /**
-     * Remove the specified service.
-     */
-    public function destroy(Service $service)
-    {
-        $this->authorize('delete', $service);
-
-        $service->delete();
-
-        return redirect()->route('services.index')
-            ->with('success', 'Service deleted successfully!');
-    }
-
-    /**
-     * Display services by category.
-     */
     public function byCategory(string $category): View
     {
         $services = Service::with('user')

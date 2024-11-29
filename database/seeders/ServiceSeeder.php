@@ -28,7 +28,7 @@ class ServiceSeeder extends Seeder
         // For each category and service title
         foreach ($categories as $category => $titles) {
             foreach ($titles as $title) {
-                // Create 3 providers per service per city
+                // Made 3 servicesso that it doesnt say no services available
                 foreach ($spanishCities as $city) {
                     for ($i = 0; $i < 3; $i++) {
                         $provider = User::factory()->create(['is_provider' => true]);
@@ -47,4 +47,4 @@ class ServiceSeeder extends Seeder
             }
         }
     }
-} 
+}

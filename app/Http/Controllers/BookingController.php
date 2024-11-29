@@ -9,10 +9,7 @@ use Carbon\Carbon;
 use Illuminate\View\View;
 
 class BookingController extends Controller
-{
-    /**
-     * Display a listing of the user's bookings.
-     */
+{/**  * Listing of users booking  */
     public function index(): View
     {
         $bookings = Booking::where('user_id', auth()->id())
@@ -65,7 +62,7 @@ class BookingController extends Controller
         $end = Carbon::tomorrow()->addDays(7);
 
         while ($start <= $end) {
-            // Add business hours (9 AM to 5 PM)
+            // Add business hours 
             for ($hour = 9; $hour < 17; $hour++) {
                 $time = $start->copy()->setHour($hour);
 

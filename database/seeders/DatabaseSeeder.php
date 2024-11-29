@@ -8,19 +8,15 @@ use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        // Create a test client
         User::create([
             'name' => 'Test Client',
             'email' => 'client@example.com',
             'password' => Hash::make('password'),
         ]);
 
-        // Call the ServiceSeeder
         $this->call(ServiceSeeder::class);
     }
 }

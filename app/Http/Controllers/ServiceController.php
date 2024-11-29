@@ -48,13 +48,13 @@ class ServiceController extends Controller
         ));
     }
 
-    /**
-     * Show the form for creating a new service.
-     */
-    public function create(): View
-    {
-        return view('services.create');
-    }
+    // /**
+    //  * Show the form for creating a new service.
+    //  */
+    // public function create(): View
+    // {
+    //     return view('services.create');
+    // }
 
     /**
      * Store a newly created service.
@@ -113,12 +113,12 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified service.
      */
-    public function edit(Service $service): View
-    {
-        $this->authorize('update', $service);
+    // public function edit(Service $service): View
+    // {
+    //     $this->authorize('update', $service);
 
-        return view('services.edit', compact('service'));
-    }
+    //     return view('services.edit', compact('service'));
+    // }
 
     /**
      * Update the specified service.
